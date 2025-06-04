@@ -1,5 +1,6 @@
 from domain.Pokemon import Pokemon
 from domain.Tipo import Tipo
+from domain.dto.PokemonRead import PokemonRead
 from domain.dto.PokemonCreate import PokemonCreate
 from domain.dto.PokemonUpdate import PokemonUpdate
 from src.utils import get_success_response
@@ -17,7 +18,7 @@ def get_all():
     pokemons: list[Pokemon] = list(session.exec(select(Pokemon)).all())
 
     return get_success_response({
-        "pokemons": pokemons
+        "pokemons": [PokemonRead.from_pokemon(p) for p in pokemons]
     })
 
 
@@ -29,7 +30,7 @@ def get_all_paginated(page: int, size: int):
     pokemons: list[Pokemon] = list(session.exec(select(Pokemon).offset(offset).limit(size)).all())
 
     return get_success_response({
-        "pokemons": pokemons
+        "pokemons": [PokemonRead.from_pokemon(p) for p in pokemons]
     })
 
 
@@ -42,7 +43,7 @@ def get_pokemon_by_id(id: int):
         raise HTTPException(status_code=404, detail="Not Found")
     
     return get_success_response({
-        "pokemon": pokemon
+        "pokemon": PokemonRead.from_pokemon(pokemon)
     })
 
 
@@ -57,7 +58,7 @@ def get_pokemons_with_filter(id: int, name: str | None = None, primary_type: int
     )).all())
 
     return get_success_response({
-        "pokemons": pokemons
+        "pokemons": [PokemonRead.from_pokemon(p) for p in pokemons]
     })
 
 
@@ -86,7 +87,7 @@ def create_pokemon(pokemon: PokemonCreate):
     session.refresh(new_pokemon)
 
     return get_success_response({
-        "pokemon": new_pokemon
+        "pokemon": PokemonRead.from_pokemon(new_pokemon)
     })
 
 
@@ -114,7 +115,7 @@ def update_pokemon(pokemon: PokemonUpdate):
     session.commit()
     session.refresh(pokemon_db)
     return get_success_response({
-        "pokemon": pokemon_db
+        "pokemon": PokemonRead.from_pokemon(pokemon_db)
     })
 
 
@@ -126,8 +127,10 @@ def delete_pokemon(id: int):
     if not pokemon:
         raise HTTPException(status_code=404, detail="pokemon Not Found")
     
+    deleted_pokemon = PokemonRead.from_pokemon(pokemon).model_dump()
+
     session.delete(pokemon)
     session.commit()
     return get_success_response({
-        "pokemon": pokemon
+        "pokemon": deleted_pokemon
     })
