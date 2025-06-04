@@ -21,6 +21,18 @@ def get_all():
     })
 
 
+@pokemon_router.get("/paginated")
+def get_all_paginated(page: int, size: int):
+    session = get_session()
+
+    offset = page * size
+    pokemons: list[Pokemon] = list(session.exec(select(Pokemon).offset(offset).limit(size)).all())
+
+    return get_success_response({
+        "pokemons": pokemons
+    })
+
+
 @pokemon_router.get("/{id}")
 def get_pokemon_by_id(id: int):
     session = get_session()

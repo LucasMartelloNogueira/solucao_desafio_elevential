@@ -1,4 +1,5 @@
 import json
+import os
 
 from domain.Pokemon import Pokemon
 from domain.Tipo import Tipo
@@ -22,7 +23,7 @@ def get_session():
 
 
 def populate_database():
-    with open("../dados_pokemons_tipos.json") as file:
+    with open("dados_pokemons_tipos.json") as file:
         data = json.load(file)
         pokemons = [Pokemon(**p) for p in data["pokemons"]]
         tipos = [Tipo(**t) for t in data["tipos"]]
@@ -37,6 +38,12 @@ def populate_database():
             p.codigo = None
             session.add(p)
             session.commit()
+
+# Para criar e popular o banco de dados:
+# 1) instalar uv
+# 2) descomentar as linhas seguintes
+# 3) rodar uv pip install -e . (vai baixar o diretorio atual como dependencia e acabar com problemas de import to python)
+# 4) dentro do diretorio "backend" rodar uv run src/persistence.py
 
 # create_db_and_tables()
 # populate_database()
