@@ -125,9 +125,8 @@ export default function PokemonDetailsPage({ controller }: props) {
                                 <MenuItem value={codigo}>{nome}</MenuItem>
                             )
                         })}
-
+                        
                     </Select>
-
                 </FormControl>
 
                 <FormControl sx={{ marginTop: "8px", width: "50%" }}>
