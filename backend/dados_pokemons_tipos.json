@@ -1,0 +1,974 @@
+{
+    "pokemons": [
+        {
+            "codigo": 1,
+            "nome": "bulbasaur",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 2,
+            "nome": "ivysaur",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 3,
+            "nome": "venusaur",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 4,
+            "nome": "charmander",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 5,
+            "nome": "charmeleon",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 6,
+            "nome": "charizard",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 7,
+            "nome": "squirtle",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 8,
+            "nome": "wartortle",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 9,
+            "nome": "blastoise",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 10,
+            "nome": "caterpie",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 11,
+            "nome": "metapod",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 12,
+            "nome": "butterfree",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 13,
+            "nome": "weedle",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 14,
+            "nome": "kakuna",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 15,
+            "nome": "beedrill",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 16,
+            "nome": "pidgey",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 17,
+            "nome": "pidgeotto",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 18,
+            "nome": "pidgeot",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 19,
+            "nome": "rattata",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 20,
+            "nome": "raticate",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 21,
+            "nome": "spearow",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 22,
+            "nome": "fearow",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 23,
+            "nome": "ekans",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 24,
+            "nome": "arbok",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 25,
+            "nome": "pikachu",
+            "codigo_tipo_primario": 8,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 26,
+            "nome": "raichu",
+            "codigo_tipo_primario": 8,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 27,
+            "nome": "sandshrew",
+            "codigo_tipo_primario": 9,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 28,
+            "nome": "sandslash",
+            "codigo_tipo_primario": 9,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 29,
+            "nome": "nidoran-f",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 30,
+            "nome": "nidorina",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 31,
+            "nome": "nidoqueen",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": 9
+        },
+        {
+            "codigo": 32,
+            "nome": "nidoran-m",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 33,
+            "nome": "nidorino",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 34,
+            "nome": "nidoking",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": 9
+        },
+        {
+            "codigo": 35,
+            "nome": "clefairy",
+            "codigo_tipo_primario": 10,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 36,
+            "nome": "clefable",
+            "codigo_tipo_primario": 10,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 37,
+            "nome": "vulpix",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 38,
+            "nome": "ninetales",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 39,
+            "nome": "jigglypuff",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 10
+        },
+        {
+            "codigo": 40,
+            "nome": "wigglytuff",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 10
+        },
+        {
+            "codigo": 41,
+            "nome": "zubat",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 42,
+            "nome": "golbat",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 43,
+            "nome": "oddish",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 44,
+            "nome": "gloom",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 45,
+            "nome": "vileplume",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 46,
+            "nome": "paras",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": 1
+        },
+        {
+            "codigo": 47,
+            "nome": "parasect",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": 1
+        },
+        {
+            "codigo": 48,
+            "nome": "venonat",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 49,
+            "nome": "venomoth",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 50,
+            "nome": "diglett",
+            "codigo_tipo_primario": 9,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 51,
+            "nome": "dugtrio",
+            "codigo_tipo_primario": 9,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 52,
+            "nome": "meowth",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 53,
+            "nome": "persian",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 54,
+            "nome": "psyduck",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 55,
+            "nome": "golduck",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 56,
+            "nome": "mankey",
+            "codigo_tipo_primario": 11,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 57,
+            "nome": "primeape",
+            "codigo_tipo_primario": 11,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 58,
+            "nome": "growlithe",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 59,
+            "nome": "arcanine",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 60,
+            "nome": "poliwag",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 61,
+            "nome": "poliwhirl",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 62,
+            "nome": "poliwrath",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 11
+        },
+        {
+            "codigo": 63,
+            "nome": "abra",
+            "codigo_tipo_primario": 12,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 64,
+            "nome": "kadabra",
+            "codigo_tipo_primario": 12,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 65,
+            "nome": "alakazam",
+            "codigo_tipo_primario": 12,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 66,
+            "nome": "machop",
+            "codigo_tipo_primario": 11,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 67,
+            "nome": "machoke",
+            "codigo_tipo_primario": 11,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 68,
+            "nome": "machamp",
+            "codigo_tipo_primario": 11,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 69,
+            "nome": "bellsprout",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 70,
+            "nome": "weepinbell",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 71,
+            "nome": "victreebel",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 72,
+            "nome": "tentacool",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 73,
+            "nome": "tentacruel",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 74,
+            "nome": "geodude",
+            "codigo_tipo_primario": 13,
+            "codigo_tipo_secundario": 9
+        },
+        {
+            "codigo": 75,
+            "nome": "graveler",
+            "codigo_tipo_primario": 13,
+            "codigo_tipo_secundario": 9
+        },
+        {
+            "codigo": 76,
+            "nome": "golem",
+            "codigo_tipo_primario": 13,
+            "codigo_tipo_secundario": 9
+        },
+        {
+            "codigo": 77,
+            "nome": "ponyta",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 78,
+            "nome": "rapidash",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 79,
+            "nome": "slowpoke",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 12
+        },
+        {
+            "codigo": 80,
+            "nome": "slowbro",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 12
+        },
+        {
+            "codigo": 81,
+            "nome": "magnemite",
+            "codigo_tipo_primario": 8,
+            "codigo_tipo_secundario": 14
+        },
+        {
+            "codigo": 82,
+            "nome": "magneton",
+            "codigo_tipo_primario": 8,
+            "codigo_tipo_secundario": 14
+        },
+        {
+            "codigo": 83,
+            "nome": "farfetchd",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 84,
+            "nome": "doduo",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 85,
+            "nome": "dodrio",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 86,
+            "nome": "seel",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 87,
+            "nome": "dewgong",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 15
+        },
+        {
+            "codigo": 88,
+            "nome": "grimer",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 89,
+            "nome": "muk",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 90,
+            "nome": "shellder",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 91,
+            "nome": "cloyster",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 15
+        },
+        {
+            "codigo": 92,
+            "nome": "gastly",
+            "codigo_tipo_primario": 16,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 93,
+            "nome": "haunter",
+            "codigo_tipo_primario": 16,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 94,
+            "nome": "gengar",
+            "codigo_tipo_primario": 16,
+            "codigo_tipo_secundario": 2
+        },
+        {
+            "codigo": 95,
+            "nome": "onix",
+            "codigo_tipo_primario": 13,
+            "codigo_tipo_secundario": 9
+        },
+        {
+            "codigo": 96,
+            "nome": "drowzee",
+            "codigo_tipo_primario": 12,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 97,
+            "nome": "hypno",
+            "codigo_tipo_primario": 12,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 98,
+            "nome": "krabby",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 99,
+            "nome": "kingler",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 100,
+            "nome": "voltorb",
+            "codigo_tipo_primario": 8,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 101,
+            "nome": "electrode",
+            "codigo_tipo_primario": 8,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 102,
+            "nome": "exeggcute",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 12
+        },
+        {
+            "codigo": 103,
+            "nome": "exeggutor",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": 12
+        },
+        {
+            "codigo": 104,
+            "nome": "cubone",
+            "codigo_tipo_primario": 9,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 105,
+            "nome": "marowak",
+            "codigo_tipo_primario": 9,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 106,
+            "nome": "hitmonlee",
+            "codigo_tipo_primario": 11,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 107,
+            "nome": "hitmonchan",
+            "codigo_tipo_primario": 11,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 108,
+            "nome": "lickitung",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 109,
+            "nome": "koffing",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 110,
+            "nome": "weezing",
+            "codigo_tipo_primario": 2,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 111,
+            "nome": "rhyhorn",
+            "codigo_tipo_primario": 9,
+            "codigo_tipo_secundario": 13
+        },
+        {
+            "codigo": 112,
+            "nome": "rhydon",
+            "codigo_tipo_primario": 9,
+            "codigo_tipo_secundario": 13
+        },
+        {
+            "codigo": 113,
+            "nome": "chansey",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 114,
+            "nome": "tangela",
+            "codigo_tipo_primario": 1,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 115,
+            "nome": "kangaskhan",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 116,
+            "nome": "horsea",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 117,
+            "nome": "seadra",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 118,
+            "nome": "goldeen",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 119,
+            "nome": "seaking",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 120,
+            "nome": "staryu",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 121,
+            "nome": "starmie",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 12
+        },
+        {
+            "codigo": 122,
+            "nome": "mr-mime",
+            "codigo_tipo_primario": 12,
+            "codigo_tipo_secundario": 10
+        },
+        {
+            "codigo": 123,
+            "nome": "scyther",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 124,
+            "nome": "jynx",
+            "codigo_tipo_primario": 15,
+            "codigo_tipo_secundario": 12
+        },
+        {
+            "codigo": 125,
+            "nome": "electabuzz",
+            "codigo_tipo_primario": 8,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 126,
+            "nome": "magmar",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 127,
+            "nome": "pinsir",
+            "codigo_tipo_primario": 6,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 128,
+            "nome": "tauros",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 129,
+            "nome": "magikarp",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 130,
+            "nome": "gyarados",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 131,
+            "nome": "lapras",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": 15
+        },
+        {
+            "codigo": 132,
+            "nome": "ditto",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 133,
+            "nome": "eevee",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 134,
+            "nome": "vaporeon",
+            "codigo_tipo_primario": 5,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 135,
+            "nome": "jolteon",
+            "codigo_tipo_primario": 8,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 136,
+            "nome": "flareon",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 137,
+            "nome": "porygon",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 138,
+            "nome": "omanyte",
+            "codigo_tipo_primario": 13,
+            "codigo_tipo_secundario": 5
+        },
+        {
+            "codigo": 139,
+            "nome": "omastar",
+            "codigo_tipo_primario": 13,
+            "codigo_tipo_secundario": 5
+        },
+        {
+            "codigo": 140,
+            "nome": "kabuto",
+            "codigo_tipo_primario": 13,
+            "codigo_tipo_secundario": 5
+        },
+        {
+            "codigo": 141,
+            "nome": "kabutops",
+            "codigo_tipo_primario": 13,
+            "codigo_tipo_secundario": 5
+        },
+        {
+            "codigo": 142,
+            "nome": "aerodactyl",
+            "codigo_tipo_primario": 13,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 143,
+            "nome": "snorlax",
+            "codigo_tipo_primario": 7,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 144,
+            "nome": "articuno",
+            "codigo_tipo_primario": 15,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 145,
+            "nome": "zapdos",
+            "codigo_tipo_primario": 8,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 146,
+            "nome": "moltres",
+            "codigo_tipo_primario": 3,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 147,
+            "nome": "dratini",
+            "codigo_tipo_primario": 17,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 148,
+            "nome": "dragonair",
+            "codigo_tipo_primario": 17,
+            "codigo_tipo_secundario": null
+        },
+        {
+            "codigo": 149,
+            "nome": "dragonite",
+            "codigo_tipo_primario": 17,
+            "codigo_tipo_secundario": 4
+        },
+        {
+            "codigo": 150,
+            "nome": "mewtwo",
+            "codigo_tipo_primario": 12,
+            "codigo_tipo_secundario": null
+        }
+    ],
+    "tipos": [
+        {
+            "codigo": 1,
+            "nome": "grass"
+        },
+        {
+            "codigo": 2,
+            "nome": "poison"
+        },
+        {
+            "codigo": 3,
+            "nome": "fire"
+        },
+        {
+            "codigo": 4,
+            "nome": "flying"
+        },
+        {
+            "codigo": 5,
+            "nome": "water"
+        },
+        {
+            "codigo": 6,
+            "nome": "bug"
+        },
+        {
+            "codigo": 7,
+            "nome": "normal"
+        },
+        {
+            "codigo": 8,
+            "nome": "electric"
+        },
+        {
+            "codigo": 9,
+            "nome": "ground"
+        },
+        {
+            "codigo": 10,
+            "nome": "fairy"
+        },
+        {
+            "codigo": 11,
+            "nome": "fighting"
+        },
+        {
+            "codigo": 12,
+            "nome": "psychic"
+        },
+        {
+            "codigo": 13,
+            "nome": "rock"
+        },
+        {
+            "codigo": 14,
+            "nome": "steel"
+        },
+        {
+            "codigo": 15,
+            "nome": "ice"
+        },
+        {
+            "codigo": 16,
+            "nome": "ghost"
+        },
+        {
+            "codigo": 17,
+            "nome": "dragon"
+        }
+    ]
+}
