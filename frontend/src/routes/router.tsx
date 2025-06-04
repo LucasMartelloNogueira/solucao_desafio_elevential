@@ -5,6 +5,7 @@ import PokemonsPage from "../pages/PokemonsPage";
 import PokemonDetailsPage from "../pages/PokemonDetailsPage";
 import TiposPage from "../pages/TiposPage";
 import {pokemonPageController} from "../controllers/PokemonPageController";
+import { tiposController } from "../controllers/TiposController";
 
 export const router = createBrowserRouter([
     {
@@ -13,7 +14,7 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             { path: "", element: <PokemonsPage controller={pokemonPageController} /> },
-            { path: "pokemonDetails", element: <PokemonDetailsPage /> },
+            { path: "pokemonDetails", element: <PokemonDetailsPage controller={tiposController}/> },
             { path: "Tipos", element: <TiposPage /> },
         ]
     }

@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import type { Pokemon } from "../../types/Pokemon"
 import type { IPokemonPageController } from "../interfaces/PokemonPageController";
+import PokemonTable from "../components/PokemonTable";
 
 type props = {
     controller: IPokemonPageController
@@ -39,19 +40,9 @@ export default function PokemonsPage({ controller }: props) {
     }
 
     return (
-        <Box>
+        <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
             <Typography> Pagina de pokemons</Typography>
-            {pokemons && pokemons.map((pokemon) => {
-                return (
-                    <div key={pokemon.codigo}>
-                        <div>{pokemon.codigo}</div>
-                        <div>{pokemon.nome}</div>
-                        <div>{pokemon.tipo_primario.nome}</div>
-                        <div>{pokemon.tipo_secundario === null ? "-" : pokemon.tipo_secundario.nome}</div>
-                    </ div>
-
-                )
-            })}
+            <PokemonTable pokemons={pokemons}/>
         </Box>
     )
 }

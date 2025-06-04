@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom"
 
 export default function Layout() {
     return (
-        <Box component="div">
+        <Box component="div" sx={{marginX: 50}}>
             <Outlet />
         </Box>
     )
