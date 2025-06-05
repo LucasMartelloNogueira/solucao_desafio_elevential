@@ -1,4 +1,4 @@
-import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material"
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material"
 import type { Pokemon } from "../../types/Pokemon"
 import PokemonTableRow from "./PokemonTableRow"
 

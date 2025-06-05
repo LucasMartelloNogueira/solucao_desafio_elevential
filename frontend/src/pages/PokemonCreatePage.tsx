@@ -13,7 +13,7 @@ export default function PokemonCreatePage({ controller }: props) {
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [tiposMap, setTiposMap] = useState<{ [key: string]: number }>({})
-    const [successUpdateOP, setSuccessUpdateOP] = useState<boolean>(false)
+    const [successUpdateOP, _] = useState<boolean>(false)
 
 
     const [formData, setFormData] = useState<{ [key: string]: any }>({

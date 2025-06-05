@@ -5,7 +5,7 @@ import type { IPokemonPageController } from "../interfaces/PokemonPageController
 import PokemonTable from "../components/PokemonTable";
 import SearchIcon from '@mui/icons-material/Search';
 import type { Tipo } from "../../types/Tipo";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 type props = {
     controller: IPokemonPageController
@@ -129,7 +129,7 @@ export default function PokemonsPage({ controller }: props) {
             </Box>
 
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                <SearchIcon />
+                <SearchIcon sx={{marginBottom: "20px"}}/>
                 <input
                     type="text"
                     value={searchQuery}

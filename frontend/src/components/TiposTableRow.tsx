@@ -1,7 +1,6 @@
 import { Button, TableCell, TableRow } from "@mui/material"
 import type { Tipo } from "../../types/Tipo"
 import { indigo } from "@mui/material/colors";
-import { useNavigate } from "react-router-dom";
 
 const evenRowBGcolor = indigo[100]
 const oddRowBGColor = indigo[50]

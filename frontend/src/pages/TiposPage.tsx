@@ -1,4 +1,4 @@
-import { Box, Button, FormControl, InputLabel, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import type { ITiposPageController } from "../interfaces/ITiposPageController";
 import { useNavigate } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import type { Tipo } from "../../types/Tipo";
 import type { TipoCreate } from "../../types/TipoCreate";
 import type { TipoUpdate } from "../../types/TipoUpdate";
-import { grey, blue } from "@mui/material/colors"
 
 type props = {
     controller: ITiposPageController

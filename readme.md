@@ -56,6 +56,11 @@ Note que isso faz com o projeto todo vire uma dependência (que pode ser visto c
     uv run python src/persistence.py
 
 
+Alternativamente, é possível restaurar o banco de dados inicial com o comando (dado que o frontend e o backend não estejam rodando):
+
+    git restore backend/src/database.db
+
+
 Note que a restauração do banco pode ser feita enquanto os sistemas estão no ar
 
 

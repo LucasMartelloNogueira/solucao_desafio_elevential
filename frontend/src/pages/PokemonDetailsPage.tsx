@@ -3,7 +3,6 @@ import type { Pokemon } from "../../types/Pokemon";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { indigo } from "@mui/material/colors";
-import type { ItiposController } from "../interfaces/TiposController";
 import type { Tipo } from "../../types/Tipo";
 import type { IPokemonDetailsPageController } from "../interfaces/IPokemonDetailsPageController";
 import type { PokemonUpdate } from "../../types/PokemonUpdate";

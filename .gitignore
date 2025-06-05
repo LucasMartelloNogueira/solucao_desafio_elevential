@@ -5,3 +5,4 @@ node_modules
 __pychache__
 *.pyc
 backend.egg-info
+.env
