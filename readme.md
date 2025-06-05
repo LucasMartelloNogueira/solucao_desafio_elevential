@@ -10,7 +10,7 @@ primeiramente, clone o respositório com o comando:
     
     git clone https://github.com/LucasMartelloNogueira/solucao_desafio_elevential.git
 
-Em seguida, abra o projeto
+Em seguida, abra a pasta "solucao_desafio_elevential"
 
 ## 1: Requisitos
 
@@ -35,17 +35,22 @@ feito isso, podemos instalar as dependências com os seguintes comandos:
 
     cd backend
     uv venv
+
+
+Em seguinda, ative o ambiente virtual (ou use ctrl+shift+p no vscode)  e baixe as dependências:
+    
+    source .venv/Scripts/activate
     uv add -r requirements.txt
 
 
 ### Banco de dados
 
-Para voltar o banco de dados com os pokemons originais, precisamos rodar o arquivo: "backend/src/persistence.py". Entretanto, o python possui algumas limitações quanto a imports (para mais informações veja: https://www.youtube.com/watch?v=Mgp6-ZMEcE0&ab_channel=GusCavanaugh). Primeiramente precisamos resolver o problema dos imports com o seguinte comando
+O banco de dados já está pronto para ser usado. Entretanto, caso deseje voltar o banco de dados com os pokemons originais, precisamos rodar o arquivo: "backend/src/persistence.py". Entretanto, o python possui algumas limitações quanto a imports (para mais informações veja: https://www.youtube.com/watch?v=Mgp6-ZMEcE0&ab_channel=GusCavanaugh). Primeiramente precisamos resolver o problema dos imports com o seguinte comando
 
     cd backend
     uv pip install -e .
 
-Note que isso faz com o projeto todo vire uma depedência (que pode ser visto com o comando uv pip list), o que resolve o problema de imports. Feito isso, podemos restaurar o banco de dados ao seu estado inicial com os comandos:
+Note que isso faz com o projeto todo vire uma dependência (que pode ser visto com o comando uv pip list), o que resolve o problema de imports. Feito isso, podemos restaurar o banco de dados ao seu estado inicial com os comandos:
 
     cd backend
     uv run python src/persistence.py
