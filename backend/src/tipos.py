@@ -4,6 +4,7 @@ from src.persistence import get_session
 from domain.Tipo import Tipo
 from domain.dto.TipoCreate import TipoCreate
 from domain.dto.TipoUpdate import TipoUpdate
+from domain.Pokemon import Pokemon
 from src.utils import get_success_response
 
 from fastapi import APIRouter, HTTPException
@@ -73,7 +74,23 @@ def delete_type(id: int):
     if not type_db:
         raise HTTPException(status_code=404, detail="Tipo Not Found")
     
-    # TODO: deletar pokemos que tem tipos primario ou secundario desse tipo
+    
+    pokemons: list[Pokemon] = list(session.exec(select(Pokemon)).all())
+    filtered_pokemon: list[Pokemon] = []
+
+    for pokemon in pokemons:
+        if pokemon.codigo_tipo_primario == type_db.codigo:
+            filtered_pokemon.append(pokemon)
+            continue
+
+        if pokemon.tipo_secundario != None:
+            if pokemon.tipo_secundario.codigo == type_db.codigo:
+                filtered_pokemon.append(pokemon)
+
+    
+    # delete cascaded pokemons com tipo que vai ser deletado
+    for pokemon in filtered_pokemon:
+        session.delete(pokemon)
     
     session.delete(type_db)
     session.commit()
