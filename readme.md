@@ -3,6 +3,7 @@
 # Objetivo
 
 Este repositório é a minha solução para o seguinte desafio proposto: https://github.com/Elevential/desafio-elevential
+link do vídeo no YouTube: https://www.youtube.com/watch?v=VoM_62Mn-DQ&ab_channel=LucasMartello
 
 # como rodar localmente
 
