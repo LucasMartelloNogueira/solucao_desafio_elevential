@@ -16,10 +16,10 @@ export default function PokemonsPage({ controller }: props) {
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [filteredPokemons, setFilteredPokemon] = useState<Pokemon[]>([])
     const [searchQuery, setSearchQuery] = useState<string>("")
-    // const [tiposMap, setTiposMap] = useState<{ [key: string]: number }>({})
-    // const [codigoTipo, setCodigoTipo] = useState<number|null>(null)
+    const [tipos, setTipos] = useState<Tipo[]>([])
+    const [codigoTipo, setCodigoTipo] = useState<number>(0)
 
-
+    
     useEffect(() => {
         setIsLoading(true)
         const getPokemons = async () => {
@@ -34,26 +34,45 @@ export default function PokemonsPage({ controller }: props) {
             setIsLoading(false);
         }
 
-        // const getTipos = async () => {
-        //     const tipos: Tipo[] | null = await controller.getAllTipos();
-        //     const newMap: { [key: string]: number } = {}
+        const getTipos = async () => {
+            const tipos: Tipo[] | null = await controller.getAllTipos();
+           
+            if (tipos !== null) {
+                const todos: Tipo = {codigo: 0, nome: "Todos os tipos"}
+                const todosOsTipos = [todos].concat(tipos)
+                setTipos(todosOsTipos)
+            }
 
-        //     if (tipos !== null) {
-        //         for (let tipo of tipos) {
-        //             newMap[tipo.nome] = tipo.codigo
-        //         }
-        //     }
-
-        //     setTiposMap(newMap)
-        //     setIsLoading(false)
-        // };
+            setIsLoading(false)
+        };
 
         getPokemons();
-        // getTipos();
+        getTipos();
     }, [])
 
-    // console.log(pokemons)
-    // console.log(typeof pokemons)
+    useEffect(() => {
+        const filtered = pokemons.filter((pokemon) => {
+            const containsName = pokemon.nome.includes(searchQuery);
+
+            let containsPrimaryType = false;
+            let containsSecundaryType = false;
+
+            if (codigoTipo !== 0) {
+                containsPrimaryType = pokemon.tipo_primario.codigo === codigoTipo;
+
+                if (pokemon.tipo_secundario !== null) {
+                    containsSecundaryType = pokemon.tipo_secundario.codigo === codigoTipo;
+                }
+            }
+
+            if (searchQuery === "" && codigoTipo === 0) return true;
+
+            return containsName && (containsPrimaryType || containsSecundaryType || codigoTipo === 0);
+        });
+
+        setFilteredPokemon(filtered);
+    }, [searchQuery, codigoTipo]);
+
 
     if (isLoading) {
         return (
@@ -63,49 +82,35 @@ export default function PokemonsPage({ controller }: props) {
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <Typography> Pagina de pokemons</Typography>
+            <Typography variant="h1"> Pagina de pokemons</Typography>
             <Box sx={{ display: "flex", alignItems: "center" }}>
                 <SearchIcon />
                 <input
                     type="text"
                     value={searchQuery}
                     placeholder="buscar por nome"
-                    onChange={(e) => {
-                        const value = e.target.value;
-                        setSearchQuery(value);
-                        setFilteredPokemon(
-                            pokemons.filter((pokemon: Pokemon) =>
-                                pokemon.nome.toLowerCase().includes(value.toLowerCase())
-                            )
-                        );
-                    }}
+                    onChange={(e) => { setSearchQuery(e.target.value) }}
                 />
-                {/* <FormControl sx={{ marginTop: "8px", width: "50%" }}>
-                    <InputLabel id="id-tipo-primario">tipo primario</InputLabel>
+                <FormControl sx={{ marginLeft: "5px", marginTop: "8px", width: "200px" }}>
+                    <InputLabel id="id-tipo">tipo</InputLabel>
                     <Select
-                        labelId="id-tipo-primario"
-                        name="tipo_primario"
+                        labelId="id-tipo"
+                        name="tipo"
                         value={codigoTipo}
                         onChange={(e) => {
-                            const value: number | null = e.target.value;
-                            setCodigoTipo(value)
-                            setFilteredPokemon(
-                                pokemons.filter((pokemon: Pokemon) => {
-                                    pokemon.tipo_primario.codigo === tipos
-                                })
-                            )
+                            setCodigoTipo(Number(e.target.value))
                         }}
                     >
-                        {Object.entries(tiposMap).map(([nome, codigo]) => {
+                        {tipos.map((tipo) => {
                             return (
-                                <MenuItem value={codigo}>{nome}</MenuItem>
+                                <MenuItem key={tipo.codigo} value={tipo.codigo}>{tipo.nome}</MenuItem>
                             )
                         })}
-                        
+
                     </Select>
-                </FormControl> */}
+                </FormControl>
             </Box>
-            <PokemonTable pokemons={searchQuery === "" ? pokemons : filteredPokemons} />
+            <PokemonTable pokemons={filteredPokemons} />
         </Box>
     )
 }
