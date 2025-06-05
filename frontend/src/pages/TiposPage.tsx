@@ -6,6 +6,8 @@ import TiposTable from "../components/TiposTable";
 import { useEffect, useState } from "react";
 import type { Tipo } from "../../types/Tipo";
 import type { TipoCreate } from "../../types/TipoCreate";
+import type { TipoUpdate } from "../../types/TipoUpdate";
+import { grey, blue } from "@mui/material/colors"
 
 type props = {
     controller: ITiposPageController
@@ -20,6 +22,16 @@ export default function TiposPage({ controller }: props) {
     const [tipos, setTipos] = useState<Tipo[]>([])
     const [filteredTipos, setFilteredTipos] = useState<Tipo[]>([])
     const [nome, setNome] = useState<string>("")
+    const [editCodigo, setEditCodigo] = useState<number>(0)
+    const [editNome, setEditNome] = useState<string>("")
+    const [isTipoSelected, setIsTipoSelected] = useState<boolean>(false)
+
+
+    const selectTipo = (tipo: Tipo) => {
+        setIsTipoSelected(true)
+        setEditCodigo(tipo.codigo)
+        setEditNome(tipo.nome)
+    }
 
 
     const deleteTipo = async (codigo: number) => {
@@ -101,7 +113,7 @@ export default function TiposPage({ controller }: props) {
                     }}
                 />
                 <Button sx={{ marginLeft: "5px" }} variant="outlined" onClick={() => {
-                    
+
                     setIsLoading(true)
 
                     const createNovoTipo = async () => {
@@ -109,7 +121,7 @@ export default function TiposPage({ controller }: props) {
                         const tipoCreate: TipoCreate = {
                             nome: nome
                         }
-    
+
                         const novoTipo = await controller.createTipo(tipoCreate)
                         if (novoTipo !== null) {
                             setNome("")
@@ -126,8 +138,69 @@ export default function TiposPage({ controller }: props) {
                 }}>Criar tipo</Button>
             </Box>
 
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
 
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+                <TextField
+                    disabled
+                    sx={{ marginTop: "8px", width: "50%" }}
+                    id="codigoEditTipo"
+                    name="codigoEditTipo"
+                    label="codigo"
+                    defaultValue={0}
+                    value={editCodigo}
+                    onChange={(e) => setEditCodigo(Number(e.target.value))}
+                />
+
+                <TextField
+                    disabled={!isTipoSelected}
+                    sx={{marginLeft: "5px", marginTop: "8px", width: "50%" }}
+                    id="nomeEditTipo"
+                    name="nomeEditTipo"
+                    // label="nome"
+                    defaultValue={editNome}
+                    value={editNome}
+                    onChange={(e) => {
+                        setEditNome(e.target.value)
+                    }}
+                />
+
+                <Button
+                    disabled={!isTipoSelected}
+                    variant={isTipoSelected ? "contained" : "outlined"}
+                    sx={{marginLeft: "5px"}}
+                    onClick={() => {
+                        setIsLoading(true)
+
+                        const updateTipo = async (tipo: TipoUpdate) => {
+                            const updatedTipo: Tipo | null = await controller.editTipo(tipo)
+
+                            if (updatedTipo) {
+                                setTipos((currentTipos) => {
+                                    return currentTipos.map((tipo) => {
+                                        if (tipo.codigo === updatedTipo.codigo) {
+                                            return updatedTipo
+                                        }
+
+                                        return tipo
+                                    })
+                                })
+                            }
+                            
+                            setIsTipoSelected(false)
+                            setIsLoading(false)
+                            setEditCodigo(0)
+                            setEditNome("")
+                        }
+                        
+                        const tipoToBeUpdated: TipoUpdate = {codigo: editCodigo, nome: editNome}
+                        updateTipo(tipoToBeUpdated);
+                    }}
+                >editar tipo</Button>
+
+            </Box>
+
+
+            <Box sx={{marginTop: "10px",  display: "flex", alignItems: "center" }}>
                 <SearchIcon />
                 <input
                     type="text"
@@ -137,7 +210,7 @@ export default function TiposPage({ controller }: props) {
                 />
 
             </Box>
-            <TiposTable tipos={filteredTipos} deleteTipo={deleteTipo} />
+            <TiposTable tipos={filteredTipos} deleteTipo={deleteTipo} selectTipo={selectTipo} />
         </Box>
     )
 }

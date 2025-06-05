@@ -10,11 +10,10 @@ type props = {
     tipo: Tipo
     rowNum: number
     deleteTipo: (codigo: number) => void
+    selectTipo: (tipo: Tipo) => void
 }
 
-export default function TiposTableRow({ tipo, rowNum, deleteTipo }: props) {
-
-    const navigate = useNavigate()
+export default function TiposTableRow({ tipo, rowNum, deleteTipo, selectTipo }: props) {
 
     return (
         <TableRow sx={{ backgroundColor: rowNum % 2 == 0 ? evenRowBGcolor : oddRowBGColor }}>
@@ -24,11 +23,7 @@ export default function TiposTableRow({ tipo, rowNum, deleteTipo }: props) {
             <TableCell>
                 <Button
                     variant="contained"
-                    onClick={() => navigate("/TipoDetails", {
-                        state: {
-                            currTipo: tipo
-                        }
-                    })}
+                    onClick={() => selectTipo(tipo)}
                 >Editar
                 </Button>
                 <Button

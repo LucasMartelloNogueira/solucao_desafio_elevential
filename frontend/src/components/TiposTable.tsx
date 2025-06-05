@@ -5,9 +5,10 @@ import TiposTableRow from "./TiposTableRow"
 type props = {
     tipos: Tipo[]
     deleteTipo: (codigo: number) => void
+    selectTipo: (tipo: Tipo) => void
 }
 
-export default function TiposTable({tipos, deleteTipo}: props) {
+export default function TiposTable({tipos, deleteTipo, selectTipo}: props) {
     return (
         <TableContainer>
             <Table>
@@ -29,7 +30,7 @@ export default function TiposTable({tipos, deleteTipo}: props) {
                 </TableHead>
                 <TableBody>
                     {tipos.map((tipo, index) => {
-                        return <TiposTableRow key={tipo.codigo} tipo={tipo} rowNum={index} deleteTipo={deleteTipo}/>
+                        return <TiposTableRow key={tipo.codigo} tipo={tipo} rowNum={index} deleteTipo={deleteTipo} selectTipo={selectTipo}/>
                     })}
                 </TableBody>
             </Table>
