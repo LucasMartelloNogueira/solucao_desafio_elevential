@@ -169,7 +169,7 @@ export default function PokemonCreatePage({ controller }: props) {
 
                     }}
                 >
-                    Salvar edições
+                    Criar
                 </Button>
 
             </Paper>

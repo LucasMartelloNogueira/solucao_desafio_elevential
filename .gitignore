@@ -2,5 +2,6 @@ todo.txt
 .mypy_cache
 .venv
 node_modules
+__pychache__
 *.pyc
 backend.egg-info

@@ -39,11 +39,7 @@ def populate_database():
             session.add(p)
             session.commit()
 
-# Para criar e popular o banco de dados:
-# 1) instalar uv
-# 2) descomentar as linhas seguintes
-# 3) rodar uv pip install -e . (vai baixar o diretorio atual como dependencia e acabar com problemas de import to python)
-# 4) dentro do diretorio "backend" rodar uv run src/persistence.py
 
-# create_db_and_tables()
-# populate_database()
+if __name__ == "__main__":
+    create_db_and_tables()
+    populate_database()

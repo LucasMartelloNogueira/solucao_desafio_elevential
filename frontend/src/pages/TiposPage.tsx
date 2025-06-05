@@ -112,30 +112,33 @@ export default function TiposPage({ controller }: props) {
                         setNome(e.target.value)
                     }}
                 />
-                <Button sx={{ marginLeft: "5px" }} variant="outlined" onClick={() => {
+                <Button 
+                    disabled={nome === ""}
+                    sx={{ marginLeft: "5px" }} 
+                    variant="outlined" onClick={() => {
 
-                    setIsLoading(true)
+                        setIsLoading(true)
 
-                    const createNovoTipo = async () => {
+                        const createNovoTipo = async () => {
 
-                        const tipoCreate: TipoCreate = {
-                            nome: nome
+                            const tipoCreate: TipoCreate = {
+                                nome: nome
+                            }
+
+                            const novoTipo = await controller.createTipo(tipoCreate)
+                            if (novoTipo !== null) {
+                                setNome("")
+                                setTipos((currentTipos) => [...currentTipos, novoTipo])
+                            } else {
+                                console.log("erro ao criar novo tipo")
+                            }
+
+                            setIsLoading(false)
                         }
 
-                        const novoTipo = await controller.createTipo(tipoCreate)
-                        if (novoTipo !== null) {
-                            setNome("")
-                            setTipos((currentTipos) => [...currentTipos, novoTipo])
-                        } else {
-                            console.log("erro ao criar novo tipo")
-                        }
+                        createNovoTipo()
 
-                        setIsLoading(false)
-                    }
-
-                    createNovoTipo()
-
-                }}>Criar tipo</Button>
+                    }}>Criar tipo</Button>
             </Box>
 
             <Box sx={{ display: "flex", justifyContent: "center" }}>
