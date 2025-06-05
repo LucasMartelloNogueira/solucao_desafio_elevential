@@ -41,5 +41,15 @@ def populate_database():
 
 
 if __name__ == "__main__":
+    print(os.getcwd())
+
+    database_file = os.path.join(os.getcwd(), "src", "database.db")
+    print(database_file)
+    print(os.path.exists(database_file))
+
+    f = open(database_file, "w")
+    f.close()
+
     create_db_and_tables()
     populate_database()
+    print("banco criado e restaurando ao estado original")

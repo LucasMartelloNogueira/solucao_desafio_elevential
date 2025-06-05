@@ -121,20 +121,21 @@ export default function PokemonsPage({ controller }: props) {
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <Typography variant="h1"> Pagina de pokemons</Typography>
+            <Typography variant="h1"> Página de pokemons</Typography>
 
             <Box sx={{marginY: "20px", display: "flex", justifyContent: "center"}}>
                 <Button sx={{}} variant="outlined" onClick={() => navigate("/pokemonCreate")}>Cadastrar pokemon</Button>
                 <Button sx={{marginLeft: "5px"}} variant="outlined" onClick={() => navigate("/Tipos")}>Ver tipos</Button>
             </Box>
 
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ display: "flex", alignItems: "flex-end" }}>
                 <SearchIcon />
                 <input
                     type="text"
                     value={searchQuery}
                     placeholder="buscar por nome"
                     onChange={(e) => { setSearchQuery(e.target.value) }}
+                    style={{height: "50px", width: "80vw"}}
                 />
                 <FormControl sx={{ marginLeft: "5px", marginTop: "8px", width: "200px" }}>
                     <InputLabel id="id-tipo">tipo</InputLabel>

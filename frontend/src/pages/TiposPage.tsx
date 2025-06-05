@@ -94,14 +94,13 @@ export default function TiposPage({ controller }: props) {
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <Typography variant="h1"> Pagina de tipos</Typography>
+            <Typography variant="h1"> Página de tipos</Typography>
 
             <Box sx={{ marginY: "20px", display: "flex", justifyContent: "center" }}>
-                <Button sx={{}} variant="outlined" onClick={() => navigate("/pokemonCreate")}>Cadastrar tipo</Button>
                 <Button sx={{ marginLeft: "5px" }} variant="outlined" onClick={() => navigate("/")}>Ver pokemons</Button>
             </Box>
 
-            <Box sx={{ marginY: "20px", display: "flex", justifyContent: "center" }}>
+            <Box sx={{ marginY: "20px", display: "flex", justifyContent: "center", height: "57px", alignItems: "flex-end" }}>
                 <TextField
                     sx={{ marginTop: "8px", width: "50%" }}
                     id="nomeNovoTipo"
@@ -114,7 +113,7 @@ export default function TiposPage({ controller }: props) {
                 />
                 <Button 
                     disabled={nome === ""}
-                    sx={{ marginLeft: "5px" }} 
+                    sx={{ marginLeft: "5px", height: "57px" }} 
                     variant="outlined" onClick={() => {
 
                         setIsLoading(true)
@@ -141,11 +140,11 @@ export default function TiposPage({ controller }: props) {
                     }}>Criar tipo</Button>
             </Box>
 
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "flex-end" }}>
 
                 <TextField
                     disabled
-                    sx={{ marginTop: "8px", width: "50%" }}
+                    sx={{ marginTop: "8px", width: "50%", height: "57px" }}
                     id="codigoEditTipo"
                     name="codigoEditTipo"
                     label="codigo"
@@ -156,7 +155,7 @@ export default function TiposPage({ controller }: props) {
 
                 <TextField
                     disabled={!isTipoSelected}
-                    sx={{marginLeft: "5px", marginTop: "8px", width: "50%" }}
+                    sx={{marginLeft: "5px", marginTop: "8px", width: "50%", height: "57px" }}
                     id="nomeEditTipo"
                     name="nomeEditTipo"
                     // label="nome"
@@ -170,7 +169,7 @@ export default function TiposPage({ controller }: props) {
                 <Button
                     disabled={!isTipoSelected}
                     variant={isTipoSelected ? "contained" : "outlined"}
-                    sx={{marginLeft: "5px"}}
+                    sx={{marginLeft: "5px", width: "200px", height: "57px"}}
                     onClick={() => {
                         setIsLoading(true)
 
@@ -198,18 +197,19 @@ export default function TiposPage({ controller }: props) {
                         const tipoToBeUpdated: TipoUpdate = {codigo: editCodigo, nome: editNome}
                         updateTipo(tipoToBeUpdated);
                     }}
-                >editar tipo</Button>
+                >Editar tipo</Button>
 
             </Box>
 
 
-            <Box sx={{marginTop: "10px",  display: "flex", alignItems: "center" }}>
+            <Box sx={{marginTop: "20px",  display: "flex", alignItems: "center" }}>
                 <SearchIcon />
                 <input
                     type="text"
                     value={searchQuery}
                     placeholder="buscar por nome"
                     onChange={(e) => { setSearchQuery(e.target.value) }}
+                    style={{height: "50px", width: "80vw"}}
                 />
 
             </Box>

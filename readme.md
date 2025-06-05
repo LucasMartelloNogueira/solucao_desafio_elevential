@@ -1,5 +1,9 @@
 ![image](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue) ![image](https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white) ![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
+# Objetivo
+
+Este repositório é a minha solução para o seguinte desafio proposto: https://github.com/Elevential/desafio-elevential
+
 # como rodar localmente
 
 ### 1: Requisitos
@@ -41,6 +45,9 @@ Note que isso faz com o projeto todo vire uma depedência (que pode ser visto co
     uv run python src/persistence.py
 
 
+Note que a restauração do banco pode ser feita enquanto os sistemas estão no ar
+
+
 ## 3: Rodando sistemas
 
 
@@ -50,11 +57,15 @@ Note que isso faz com o projeto todo vire uma depedência (que pode ser visto co
     uv run fastapi dev src/main.py
 
 
+o api pode ser acessada na url: http://localhost:8000. para ver as docs dos endpoints, acesse http://localhost:8000/docs
+
+
 ### frontend
 
     cd frontend
     npm run dev
 
+O projeto pode ser encontrado na url: http://localhost:5173
 
 ### Disclaimer:
 

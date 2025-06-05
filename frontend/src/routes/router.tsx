@@ -9,8 +9,6 @@ import { pokemonDetailsPageController } from "../controllers/PokemonDetailsPageC
 import PokemonCreatePage from "../pages/PokemonCreatePage";
 import { pokemonCreatePageController } from "../controllers/PokemonCreatePageController";
 import { tiposPageController } from "../controllers/TiposPageController";
-import TipoDetailsPage from "../pages/TipoDetailsPage";
-import { tiposDetailsPageController } from "../controllers/TipoDetailsPageController";
 
 export const router = createBrowserRouter([
     {
@@ -22,7 +20,6 @@ export const router = createBrowserRouter([
             { path: "pokemonDetails", element: <PokemonDetailsPage controller={pokemonDetailsPageController}/> },
             { path: "pokemonCreate", element: <PokemonCreatePage controller={pokemonCreatePageController}/> },
             { path: "Tipos", element: <TiposPage controller={tiposPageController}/> },
-            { path: "TipoDetails", element: <TipoDetailsPage controller={tiposDetailsPageController}/> }
         ]
     }
 ]);
