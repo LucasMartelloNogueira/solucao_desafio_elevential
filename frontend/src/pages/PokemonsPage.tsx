@@ -20,6 +20,39 @@ export default function PokemonsPage({ controller }: props) {
     const [codigoTipo, setCodigoTipo] = useState<number>(0)
 
     
+    // const editPokemon = (newPokemon: Pokemon) => {
+    //     setPokemons((currentPokemons) => {
+    //        return currentPokemons.map((pokemon) => {
+    //         if (pokemon.codigo === newPokemon.codigo) {
+    //             return newPokemon
+    //         }
+    //         return pokemon
+    //        })
+    //     })
+    // }
+
+    const deletePokemon = async (codigo: number) => {
+
+        setIsLoading(true)
+
+        const delPokemon = async (codigo: number) => {
+            const deletedPokemon = await controller.deletePokemon(codigo)
+    
+            if (deletedPokemon !== null) {
+                setPokemons((currentPokemons) => {
+                    return currentPokemons.filter((pokemon) => pokemon.codigo !== codigo)
+                })
+            } else {
+                console.log("erro ao deletar pokemon")
+            }
+
+            setIsLoading(false)
+        }
+
+        delPokemon(codigo)
+    }
+
+
     useEffect(() => {
         setIsLoading(true)
         const getPokemons = async () => {
@@ -71,12 +104,15 @@ export default function PokemonsPage({ controller }: props) {
         });
 
         setFilteredPokemon(filtered);
-    }, [searchQuery, codigoTipo]);
+    }, [searchQuery, codigoTipo, pokemons]);
 
 
     if (isLoading) {
         return (
-            <Typography variant="h1">Loading...</Typography>
+
+            <Box sx={{width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <Typography variant="h1">Loading...</Typography>
+            </Box>
         )
     }
 
@@ -110,7 +146,7 @@ export default function PokemonsPage({ controller }: props) {
                     </Select>
                 </FormControl>
             </Box>
-            <PokemonTable pokemons={filteredPokemons} />
+            <PokemonTable pokemons={filteredPokemons} deletePokemon={deletePokemon}/>
         </Box>
     )
 }

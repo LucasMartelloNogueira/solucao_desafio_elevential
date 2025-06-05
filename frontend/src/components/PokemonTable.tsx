@@ -3,10 +3,11 @@ import type { Pokemon } from "../../types/Pokemon"
 import PokemonTableRow from "./PokemonTableRow"
 
 type props = {
-    pokemons: Pokemon[]
+    pokemons: Pokemon[];
+    deletePokemon: (codigo: number) => void
 }
 
-export default function PokemonTable({ pokemons }: props) {
+export default function PokemonTable({ pokemons, deletePokemon }: props) {
 
 
     return (
@@ -48,7 +49,7 @@ export default function PokemonTable({ pokemons }: props) {
                 </TableHead>
                 <TableBody>
                     {pokemons.map((pokemon, index) => {
-                        return <PokemonTableRow rowNum={index} pokemon={pokemon} deletePokemon={() => alert("TODO criar contexto de funcao que deleta pokemon")} />
+                        return <PokemonTableRow key={pokemon.codigo} rowNum={index} pokemon={pokemon} deletePokemon={deletePokemon} />
                     })}
                 </TableBody>
             </Table>

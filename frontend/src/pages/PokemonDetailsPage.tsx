@@ -5,21 +5,23 @@ import { useLocation } from "react-router-dom";
 import { indigo } from "@mui/material/colors";
 import type { ItiposController } from "../interfaces/TiposController";
 import type { Tipo } from "../../types/Tipo";
+import type { IPokemonDetailsPageController } from "../interfaces/IPokemonDetailsPageController";
+import type { PokemonUpdate } from "../../types/PokemonUpdate";
 
 // TODO: mudar controller, botar endpoint de pegar tipos em outro controle
 type props = {
-    controller: ItiposController
+    controller: IPokemonDetailsPageController
 }
 
 export default function PokemonDetailsPage({ controller }: props) {
 
     const location = useLocation()
-    const { pokemon } = location.state || {}
+    const { currPokemon } = location.state || {}
 
-    // console.log(pokemon)
-
+    const [pokemon, setPokemon] = useState<Pokemon>(currPokemon)
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [tiposMap, setTiposMap] = useState<{ [key: string]: number }>({})
+    const [successUpdateOP, setSuccessUpdateOP] = useState<boolean>(false)
 
 
     const [formData, setFormData] = useState<{ [key: string]: any }>({
@@ -78,6 +80,7 @@ export default function PokemonDetailsPage({ controller }: props) {
     }
 
     return (
+
         <Box sx={{
             display: "flex",
             justifyContent: "center",
@@ -93,6 +96,15 @@ export default function PokemonDetailsPage({ controller }: props) {
                 alignItems: "center",
                 justifyContent: "center"
             }}>
+
+                <Typography variant="h4" >Detalhes pokemon</Typography>
+
+                {successUpdateOP && (
+                    <Typography variant="h3" color="success.main">
+                        Pokémon atualizado com sucesso!
+                    </Typography>
+                )}
+
                 <TextField
                     sx={{ marginTop: "8px", width: "50%" }}
                     disabled
@@ -125,7 +137,7 @@ export default function PokemonDetailsPage({ controller }: props) {
                                 <MenuItem value={codigo}>{nome}</MenuItem>
                             )
                         })}
-                        
+
                     </Select>
                 </FormControl>
 
@@ -146,9 +158,35 @@ export default function PokemonDetailsPage({ controller }: props) {
                     </Select>
                 </FormControl>
 
-                <Button 
-                    variant="outlined" 
-                    onChange={() => alert("TODO: chamar endpoint para salvar mudanças do pokemon")}
+                <Button
+                    sx={{marginTop: "8px"}}
+                    variant="outlined"
+                    onClick={() => {
+
+                        setIsLoading(true)
+
+                        const updatePokemon = async () => {
+                            const pokemonUpdate: PokemonUpdate = {
+                                codigo: formData["codigo"],
+                                nome: formData["nome"],
+                                codigo_tipo_primario: formData["tipo_primario"],
+                                codigo_tipo_secundario: formData["tipo_secundario"]
+                            }
+
+                            const updatedPokemon = await controller.editPokemon(pokemonUpdate)
+
+                            if (updatedPokemon !== null) {
+                                setSuccessUpdateOP(true)
+                                setPokemon(updatedPokemon)
+                                // editPokemon(updatedPokemon)
+                            }
+
+                            setIsLoading(false)
+                        }
+
+                        updatePokemon()
+
+                    }}
                 >
                     Salvar edições
                 </Button>

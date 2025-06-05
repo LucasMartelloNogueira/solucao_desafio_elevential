@@ -6,7 +6,7 @@ import type { IPokemonPageController } from "../interfaces/PokemonPageController
 
 class PokemonPageController implements IPokemonPageController {
 
-    async getPokemons(): Promise<Pokemon[] | null>{
+    async getPokemons(): Promise<Pokemon[] | null> {
         const endpoint = `${BASE_URL}/pokemons`
 
         try {
@@ -16,13 +16,13 @@ class PokemonPageController implements IPokemonPageController {
                 throw new Error(`endpoint ${endpoint} / status = ${response.status}`)
             }
 
-            const body: Response<{[key: string] : Pokemon[]}> | undefined = await response.json()
+            const body: Response<{ [key: string]: Pokemon[] }> | undefined = await response.json()
             if (body) {
                 return body.data["pokemons"]
             }
 
             return null;
-            
+
         } catch (error) {
             console.log(error);
             return null
@@ -30,26 +30,53 @@ class PokemonPageController implements IPokemonPageController {
     }
 
     async getAllTipos(): Promise<Tipo[] | null> {
-            const endpoint = `${BASE_URL}/tipos`
-    
-            try {
-                const response = await fetch(endpoint)
-                if (!response.ok) {
-                    throw new Error(`endpoint ${endpoint} / status = ${response.status}`)
-                }
-    
-                const body: Response<{ [key: string]: Tipo[] }> | undefined = await response.json()
-                if (body) {
-                    return body.data["tipos"]
-                }
-    
-                return null;
-    
-            } catch (error) {
-                console.log(error)
-                return null
+        const endpoint = `${BASE_URL}/tipos`
+
+        try {
+            const response = await fetch(endpoint)
+            if (!response.ok) {
+                throw new Error(`endpoint ${endpoint} / status = ${response.status}`)
             }
+
+            const body: Response<{ [key: string]: Tipo[] }> | undefined = await response.json()
+            if (body) {
+                return body.data["tipos"]
+            }
+
+            return null;
+
+        } catch (error) {
+            console.log(error)
+            return null
         }
+    }
+
+    async deletePokemon(codigo: number): Promise<Pokemon | null> {
+        const endpoint = `${BASE_URL}/pokemons/${codigo}`
+
+        try {
+            const response = await fetch(endpoint, {
+                method: "DELETE"
+            })
+
+            if (!response.ok) {
+                throw new Error(`endpoint ${endpoint} / status = ${response.status}`)
+            }
+
+            const body: Response<{ [key: string]: Pokemon }> | undefined = await response.json()
+            if (body) {
+                return body.data["pokemon"]
+            }
+
+            return null;
+
+        } catch (error) {
+            console.log(error)
+            return null
+        }
+    }
+
+
 }
 
 export const pokemonPageController: IPokemonPageController = new PokemonPageController()

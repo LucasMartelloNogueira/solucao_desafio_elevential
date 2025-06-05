@@ -3,5 +3,6 @@ import type { Tipo } from "../../types/Tipo";
 
 export interface IPokemonPageController {
     getPokemons(): Promise<Pokemon[] | null>;
-    getAllTipos(): Promise<Tipo[] | null>  
+    getAllTipos(): Promise<Tipo[] | null>;
+    deletePokemon(codigo: number): Promise<Pokemon | null>;  
 } 

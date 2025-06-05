@@ -27,7 +27,7 @@ export default function PokemonTableRow({rowNum, pokemon, deletePokemon}: props)
                     variant="contained"
                     onClick={() => navigate("/pokemonDetails", {
                         state: {
-                            pokemon: pokemon
+                            currPokemon: pokemon
                         }
                     })}
                 >Editar
