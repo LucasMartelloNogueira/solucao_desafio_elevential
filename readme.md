@@ -6,7 +6,9 @@ Este repositório é a minha solução para o seguinte desafio proposto: https:/
 
 # como rodar localmente
 
-primeiramente: clone o respositório com o comando: git clone https://github.com/LucasMartelloNogueira/solucao_desafio_elevential.git
+primeiramente, clone o respositório com o comando: 
+    
+    git clone https://github.com/LucasMartelloNogueira/solucao_desafio_elevential.git
 
 Em seguida, abra o projeto
 
