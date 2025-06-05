@@ -1,16 +1,19 @@
-import { Box, FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material";
+import { Box, Button, FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import type { Pokemon } from "../../types/Pokemon"
 import type { IPokemonPageController } from "../interfaces/PokemonPageController";
 import PokemonTable from "../components/PokemonTable";
 import SearchIcon from '@mui/icons-material/Search';
 import type { Tipo } from "../../types/Tipo";
+import { Link, useNavigate } from "react-router-dom";
 
 type props = {
     controller: IPokemonPageController
 }
 
 export default function PokemonsPage({ controller }: props) {
+
+    const navigate = useNavigate();
 
     const [pokemons, setPokemons] = useState<Pokemon[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -119,6 +122,9 @@ export default function PokemonsPage({ controller }: props) {
     return (
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <Typography variant="h1"> Pagina de pokemons</Typography>
+
+            <Button sx={{marginY: "20px"}} variant="outlined" onClick={() => navigate("/pokemonCreate")}>Cadastrar pokemon</Button>
+
             <Box sx={{ display: "flex", alignItems: "center" }}>
                 <SearchIcon />
                 <input

@@ -47,9 +47,9 @@ class PokemonDetailsPageController implements IPokemonDetailsPageController {
                 throw new Error(`endpoint ${endpoint} / status = ${response.status}`)
             }
 
-            const body: Response<{ [key: string]: Pokemon[] }> | undefined = await response.json()
+            const body: Response<{ [key: string]: Pokemon }> | undefined = await response.json()
             if (body) {
-
+                return body.data["pokemon"]
             }
 
             return null;

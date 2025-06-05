@@ -100,7 +100,7 @@ export default function PokemonDetailsPage({ controller }: props) {
                 <Typography variant="h4" >Detalhes pokemon</Typography>
 
                 {successUpdateOP && (
-                    <Typography variant="h3" color="success.main">
+                    <Typography variant="h5" color="success.main">
                         Pokémon atualizado com sucesso!
                     </Typography>
                 )}
