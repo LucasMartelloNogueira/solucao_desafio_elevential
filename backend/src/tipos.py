@@ -73,6 +73,8 @@ def delete_type(id: int):
     if not type_db:
         raise HTTPException(status_code=404, detail="Tipo Not Found")
     
+    # TODO: deletar pokemos que tem tipos primario ou secundario desse tipo
+    
     session.delete(type_db)
     session.commit()
     return get_success_response({

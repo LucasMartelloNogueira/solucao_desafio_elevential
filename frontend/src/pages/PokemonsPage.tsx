@@ -123,7 +123,10 @@ export default function PokemonsPage({ controller }: props) {
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <Typography variant="h1"> Pagina de pokemons</Typography>
 
-            <Button sx={{marginY: "20px"}} variant="outlined" onClick={() => navigate("/pokemonCreate")}>Cadastrar pokemon</Button>
+            <Box sx={{marginY: "20px", display: "flex", justifyContent: "center"}}>
+                <Button sx={{}} variant="outlined" onClick={() => navigate("/pokemonCreate")}>Cadastrar pokemon</Button>
+                <Button sx={{marginLeft: "5px"}} variant="outlined" onClick={() => navigate("/Tipos")}>Ver tipos</Button>
+            </Box>
 
             <Box sx={{ display: "flex", alignItems: "center" }}>
                 <SearchIcon />
