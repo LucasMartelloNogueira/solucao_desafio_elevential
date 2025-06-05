@@ -6,7 +6,11 @@ Este repositório é a minha solução para o seguinte desafio proposto: https:/
 
 # como rodar localmente
 
-### 1: Requisitos
+primeiramente: clone o respositório com o comando: git clone https://github.com/LucasMartelloNogueira/solucao_desafio_elevential.git
+
+Em seguida, abra o projeto
+
+## 1: Requisitos
 
 * Python: 3.12.5 (ou maior)
 * Node: v22.14.0 (ou maior)
